@@ -28,9 +28,12 @@
             login(){
                 this.$axios.post("adminUser/login",this.formdata).then(res=>{
                     console.log(res)
+                    // this.$store.commit("adminUser_Info",res.data)
+                    this.$store.commit("adminUser_Info",res.data)
+                    console.log(this.$store.state.adminUser_Info)
                     if(res.code==200){
                         this.$router.push('/layout/home')
-                         this.$message.info(res.msg)
+                         this.$message.success(res.msg)
                     }else{
                         this.$message.info(res.msg)
                     }
@@ -49,7 +52,7 @@
     right: 0;
     font-size: 18px;
     color: #666;
-    background-color: rgb(218, 218, 218);
+    background-color: #565c64;
     .content-wrap{
         height: 400px;
         width: 500px;

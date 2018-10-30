@@ -6,7 +6,7 @@
         <div class="sideBar-wrap">
             <SideBar class="sideBar"></SideBar>
         </div>
-        <div>
+        <div class="contain">
             <router-view></router-view>
         </div>
     <!-- <Footer></Footer> -->
@@ -43,10 +43,15 @@ import SideBar from '../components/SideBar'
     left: 200px;
     top: 0px;
     right: 0px;
+    // z-index: 998;
     text-align: center;
     font-size: 26px;
     height: 50px;
     line-height: 50px;
     border-bottom: 1px solid rgb(206, 206, 206);
+}
+.contain{
+    margin-left: 200px;
+    margin-top: 50px;
 }
 </style>

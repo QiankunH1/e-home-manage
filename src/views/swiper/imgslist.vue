@@ -12,6 +12,6 @@
 
 <style scoped lang="scss">
 .wrap{
-    margin:50px 200px;
+    // margin:50px 200px;
 }
 </style>
