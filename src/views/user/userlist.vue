@@ -28,6 +28,7 @@
                 <el-table-column
                 prop="sex"
                 label="性别"
+                :formatter = "formmatterColumn"
                 width="120">
                 </el-table-column>
                  <el-table-column  label="头像" width="150">
@@ -56,8 +57,8 @@
                 :current-page="formData.pn"
                 :page-size="formData.size"
                 layout="total,  prev, pager, next, jumper"
-                :page-count="pnTotal"
-                :total="total"
+               
+                :total="count"
                 >
                 </el-pagination>
             </div>
@@ -76,7 +77,7 @@
                 },
                 // length:"",
                 pnTotal:1,
-                total:1
+                count:1
             }
         },
         methods:{
@@ -84,19 +85,10 @@
                 this.$axios.get('/adminUser/list',{pn:this.formData.pn,size:this.formData.size}).then(res=>{
                     console.log(res)
                     this.tableData=res.data
-                    this.total=res.count
-                    console.log(this.total)
-                    this.pnTotal=Math.ceil(this.total/this.formData.size)
-                    console.log(this.pnTotal)
-                    // if(res.data.length==0){
-                    //     this.$axios.get('/adminUser/list',{pn:(this.formData.pn-1),size:this.formData.size}).then(res=>{
-                    //         console.log(res)
-                    //     })
-                    // }
+                    this.count=res.count
                 })
             },
             handleCurrentChange(val) {
-                // console.log(val)
                 this.formData.pn=val
                 this.getData()
             },
@@ -110,9 +102,26 @@
                         this.$message.error(res.msg)
                     }
                 })
+            },
+            formmatterColumn(row, column, cellValue, index){
+                console.log(row, column, cellValue, index)
+                if(row.sex==1){
+                    return "男"
+                }else{
+                    return "女"
+                }
             }
             
         },
+        // computed:{
+        //     sex(){
+        //         if(formData.sex==1){
+        //             return "男"
+        //         }else{
+        //             return "女"
+        //         }
+        //     }
+        // },
         created(){
             this.getData()
         }

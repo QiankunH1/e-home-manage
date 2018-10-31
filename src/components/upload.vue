@@ -34,7 +34,7 @@
                 this.$axios.get("http://upload.yaojunrong.com/getToken").then(res=>{
                     console.log(res)
                     this.formdata.token=res.data
-                    // console.log(this.formdata.token)
+                    console.log(this.formdata.token)
                 })
             },
              handleAvatarSuccess(file) {
