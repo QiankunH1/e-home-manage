@@ -12,7 +12,7 @@
           </el-select>
         </el-form-item>
         <el-form-item label="新闻内容">
-          <RichText v-model="richText"></RichText>
+          <RichText @submit="gettext"></RichText>
         </el-form-item>
         <el-form-item label="新闻头图">
           <upload v-model="formdata.img"></upload>
@@ -33,7 +33,7 @@
 
 <script>
 import upload from "@/components/upload";
-import RichText from "@/components/RichText";
+import RichText from "@/components/text";
 export default {
   components: {
     upload,
@@ -80,15 +80,20 @@ export default {
         }
       });
     },
-    handleSave() {}
-  },
-  watch: {
-    richText(val) {
-      console.log(val);
-      (this.formdata.contentText = val.contentText),
-        (this.formdata.content = val.content);
+    handleSave() {},
+    gettext(val){
+      console.log(val)
+      this.formdata.content=val.content
+      this.formdata.contentText=val.contentText
     }
   },
+  // watch: {
+  //   richText(val) {
+  //     console.log(val);
+  //     (this.formdata.contentText = val.contentText),
+  //       (this.formdata.content = val.content);
+  //   }
+  // },
   created() {
     this.getUser();
     this.getType();

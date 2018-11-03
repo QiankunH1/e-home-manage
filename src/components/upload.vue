@@ -36,6 +36,7 @@
                     this.formdata.token=res.data
                     console.log(this.formdata.token)
                 })
+                console.log("aaa")
             },
              handleAvatarSuccess(file) {
                  console.log(file)

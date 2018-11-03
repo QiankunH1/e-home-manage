@@ -11,24 +11,25 @@
                 <i class="el-icon-location"></i>
                 <span>用户管理</span>
                 </template>
-                <el-menu-item index="userlist">管理员列表</el-menu-item>
-                <el-menu-item index="adduser">添加管理员</el-menu-item>
+                <el-menu-item index="/layout/userlist">管理员列表</el-menu-item>
+                <el-menu-item index="/layout/adduser">添加管理员</el-menu-item>
             </el-submenu>
             <el-submenu index='轮播图管理'>
                 <template slot="title">
                 <i class="el-icon-menu"></i>
                 <span>轮播图管理</span>
                 </template>
-                <el-menu-item index="imgslist">轮播图列表</el-menu-item>
-                <el-menu-item index="addimgs">添加轮播图</el-menu-item>
+                <el-menu-item index="/layout/imgslist">轮播图列表</el-menu-item>
+                <el-menu-item index="/layout/addimgs">添加轮播图</el-menu-item>
             </el-submenu>
             <el-submenu index='新闻管理'>
                 <template slot="title">
                 <i class="el-icon-setting"></i>
                 <span>新闻管理</span>
                 </template>
-                <el-menu-item index="newslist">新闻列表</el-menu-item>
-                <el-menu-item index="addnews">添加新闻</el-menu-item>
+                <el-menu-item index="/layout/newslist">新闻列表</el-menu-item>
+                <el-menu-item index="/layout/addnews">添加新闻</el-menu-item>
+                <el-menu-item index="/layout/addnewsdemo">添加新闻demo</el-menu-item>
             </el-submenu>
         </el-menu>
     </div>

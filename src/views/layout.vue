@@ -43,7 +43,8 @@ import SideBar from '../components/SideBar'
     left: 200px;
     top: 0px;
     right: 0px;
-    // z-index: 998;
+    z-index: 998;
+    background-color: #fff;
     text-align: center;
     font-size: 26px;
     height: 50px;

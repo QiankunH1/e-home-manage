@@ -1,12 +1,13 @@
 <template>
     <div class="wrap">
-        图片列表
+        轮播图列表
     </div>
 </template>
 
 <script>
+// import RichText from "../../components/richText"
     export default {
-        
+  
     }
 </script>
 

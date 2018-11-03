@@ -27,7 +27,7 @@
                     label="操作"
                     width="200">
                     <template slot-scope="scope">
-                        <el-button  size="small">编辑</el-button>
+                        <el-button  size="small" @click="handledetail(scope.row._id)">详情</el-button>
                         <el-button @click="handleClick(scope.row._id)" type="danger" size="small">删除</el-button>
                     </template>
                 </el-table-column>
@@ -79,6 +79,9 @@
                          this.$message.error(res.msg)
                     }
                 })
+            },
+            handledetail(id){
+                this.$router.push({name:"newdetail",params:{id}})
             }
         },
         created(){

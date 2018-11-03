@@ -5,6 +5,7 @@
 </template>
 
 <script>
+// import RichText from "../../components/richText"
     export default {
         
     }

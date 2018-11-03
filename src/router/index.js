@@ -10,8 +10,10 @@ const components={
   adduser:()=>import('@/views/user/adduser'),
   newslist:()=>import('@/views/news/newslist'),
   addnews:()=>import('@/views/news/addnews'),
+  addnewsdemo:()=>import('@/views/newsdemo/addnewsdemo'),
+  newdetail:()=>import('@/views/news/newdetail'),
   imgslist:()=>import('@/views/swiper/imgslist'),
-  addimgs:()=>import('@/views/swiper/addimgs')
+  addimgs:()=>import('@/views/swiper/addimgs'),
 }
 const router= new Router({
   routes: [
@@ -60,6 +62,16 @@ const router= new Router({
           path: 'addnews',
           name: 'addnews',
           component: components.addnews
+        },
+        {
+          path: 'addnewsdemo',
+          name: 'addnewsdemo',
+          component: components.addnewsdemo
+        },
+        {
+          path: 'newdetail/:id',
+          name: 'newdetail',
+          component: components.newdetail
         },
       ]
     },
